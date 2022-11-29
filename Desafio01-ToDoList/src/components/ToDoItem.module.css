@@ -1,0 +1,83 @@
+.toDoItem {
+  list-style-type: none;
+  padding: 1rem;
+  background: var(--gray-500);
+  border: 1px solid var(--gray-400);
+  border-radius: 8px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.toDoItem + .toDoItem {
+  margin-top: 0.75rem;
+}
+
+.checkboxContainer {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkboxUnchecked {
+  height: 1.1rem;
+  width: 1.1rem;
+  border-radius: 50%;
+  border: 2px solid var(--blue-600);
+}
+
+.checkboxContainer:hover .checkboxUnchecked {
+  background: var(--blue-800);
+}
+
+.checkboxChecked {
+  height: 1.1rem;
+  width: 1.1rem;
+  border-radius: 50%;
+  background: var(--purple-500);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.checkboxChecked::before {
+  content: url("../assets/check.svg");
+  line-height: 0;
+  font-size: 0.5rem;
+}
+
+.checkboxContainer:hover .checkboxChecked {
+  background: var(--purple-300);
+}
+
+.description {
+  flex: 1;
+  color: var(--gray-100);
+  font-size: 0.875rem;
+}
+
+.descriptionDone {
+  flex: 1;
+  text-decoration: line-through;
+  color: var(--gray-300);
+  font-size: 0.875rem;
+}
+
+.deleteButton {
+  background: transparent;
+  color: var(--gray-300);
+  font-size: 1.225rem; /* Diferente do layout porque, na biblioteca, há um espaço entre a borda do SVG e a borda do ícone em si */
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  color: var(--red-300);
+}

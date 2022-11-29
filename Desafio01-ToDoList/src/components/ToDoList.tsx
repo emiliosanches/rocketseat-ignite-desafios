@@ -1,9 +1,18 @@
 import { PlusCircle, Trash } from "phosphor-react";
 import ClipboardImage from "../assets/clipboard.png";
+import { ToDoItem } from "./ToDoItem";
 
 import styles from "./ToDoList.module.css";
 
 export function ToDoList() {
+  function changeToDoItemStatus(id: number) {
+    console.log(id + " changed");
+  }
+
+  function deleteToDoItem(id: number) {
+    console.log(id + " deleted");
+  }
+
   return (
     <div className={styles.itemsListContainer}>
       <form className={styles.newItemForm}>
@@ -31,30 +40,18 @@ export function ToDoList() {
       </div> */}
 
       <ul className={styles.notEmptyList}>
-        <li>
-          <div className={styles.checkboxContainer}>
-            <div className={styles.checkboxUnchecked} />
-          </div>
-          <span>
-            Integer urna interdum massa libero auctor neque turpis turpis
-            semper. Duis vel sed fames integer.
-          </span>
-          <button className={styles.deleteButton} title="Excluir">
-            <Trash />
-          </button>
-        </li>
-        <li>
-          <div className={styles.checkboxContainer}>
-            <div className={styles.checkboxChecked} />
-          </div>
-          <span>
-            Integer urna interdum massa libero auctor neque turpis turpis
-            semper. Duis vel sed fames integer.
-          </span>
-          <button className={styles.deleteButton} title="Excluir">
-            <Trash />
-          </button>
-        </li>
+        <ToDoItem
+          id={1}
+          onChangeStatus={changeToDoItemStatus}
+          onDelete={deleteToDoItem}
+          isChecked={true}
+        />
+        <ToDoItem
+          id={2}
+          onChangeStatus={changeToDoItemStatus}
+          onDelete={deleteToDoItem}
+          isChecked={false}
+        />
       </ul>
     </div>
   );
