@@ -64,7 +64,7 @@
   margin-left: 0.5rem;
   background: var(--gray-400);
   color: var(--gray-200);
-  padding: .125rem .5rem;
+  padding: 0.125rem 0.5rem;
   border-radius: 999px;
 }
 
@@ -89,4 +89,66 @@
 .emptyList span {
   color: var(--gray-300);
   line-height: 1.4;
+}
+
+.notEmptyList {
+  margin-top: 1.5rem;
+}
+
+.notEmptyList li {
+  list-style-type: none;
+  padding: 1rem;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.checkboxContainer {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.checkboxUnchecked {
+  height: 1.1rem;
+  width: 1.1rem;
+  border-radius: 50%;
+  border: 2px solid var(--blue-600);
+}
+
+.checkboxUnchecked:hover {
+  background: var(--blue-800);
+}
+
+.checkboxChecked {
+  height: 1.1rem;
+  width: 1.1rem;
+  border-radius: 50%;
+  background: var(--purple-500);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.checkboxChecked::before {
+  content: url("../assets/check.svg");
+  line-height: 0;
+  font-size: 0.5rem;
+}
+
+.checkboxChecked:hover {
+  background: var(--purple-300);
+}
+
+.notEmptyList li span {
+  display: inline-block;
+  flex: 1;
+  color: var(--gray-100);
+  font-size: 0.875rem;
+}
+
+.deleteButton {
+  background: transparent;
+  color: var(--gray-300);
+  font-size: 1.225rem; /* Diferente do layout porque, na biblioteca, há um espaço entre a borda do SVG e a borda do ícone em si */
 }

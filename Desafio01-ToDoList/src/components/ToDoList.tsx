@@ -1,4 +1,4 @@
-import { PlusCircle } from "phosphor-react";
+import { PlusCircle, Trash } from "phosphor-react";
 import ClipboardImage from "../assets/clipboard.png";
 
 import styles from "./ToDoList.module.css";
@@ -24,11 +24,38 @@ export function ToDoList() {
         </div>
       </header>
 
-      <div className={styles.emptyList}>
+      {/* <div className={styles.emptyList}>
         <img src={ClipboardImage} />
         <strong>Você ainda não tem tarefas cadastradas</strong>
         <span>Crie tarefas e organize seus itens a fazer</span>
-      </div>
+      </div> */}
+
+      <ul className={styles.notEmptyList}>
+        <li>
+          <div className={styles.checkboxContainer}>
+            <div className={styles.checkboxUnchecked} />
+          </div>
+          <span>
+            Integer urna interdum massa libero auctor neque turpis turpis
+            semper. Duis vel sed fames integer.
+          </span>
+          <button className={styles.deleteButton} title="Excluir">
+            <Trash />
+          </button>
+        </li>
+        <li>
+          <div className={styles.checkboxContainer}>
+            <div className={styles.checkboxChecked} />
+          </div>
+          <span>
+            Integer urna interdum massa libero auctor neque turpis turpis
+            semper. Duis vel sed fames integer.
+          </span>
+          <button className={styles.deleteButton} title="Excluir">
+            <Trash />
+          </button>
+        </li>
+      </ul>
     </div>
   );
 }
