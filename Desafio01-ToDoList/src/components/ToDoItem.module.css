@@ -62,6 +62,8 @@
   flex: 1;
   color: var(--gray-100);
   font-size: 0.875rem;
+  line-height: 1.4;
+  align-self: center;
 }
 
 .descriptionDone {
@@ -69,6 +71,8 @@
   text-decoration: line-through;
   color: var(--gray-300);
   font-size: 0.875rem;
+  line-height: 1.4;
+  align-self: center;
 }
 
 .deleteButton {
@@ -76,8 +80,14 @@
   color: var(--gray-300);
   font-size: 1.225rem; /* Diferente do layout porque, na biblioteca, há um espaço entre a borda do SVG e a borda do ícone em si */
   cursor: pointer;
+  line-height: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
 }
 
 .deleteButton:hover {
   color: var(--red-300);
+  background: var(--gray-400);
+  border-radius: 4px;
 }

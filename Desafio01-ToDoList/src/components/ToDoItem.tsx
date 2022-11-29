@@ -4,6 +4,7 @@ import styles from "./ToDoItem.module.css";
 interface ToDoItemProps {
   id: number;
   isChecked: boolean;
+  text: string;
   onChangeStatus: (id: number) => void;
   onDelete: (id: number) => void;
 }
@@ -11,6 +12,7 @@ interface ToDoItemProps {
 export function ToDoItem({
   id,
   isChecked,
+  text,
   onChangeStatus,
   onDelete,
 }: ToDoItemProps) {
@@ -27,8 +29,7 @@ export function ToDoItem({
         />
       </button>
       <span className={isChecked ? styles.descriptionDone : styles.description}>
-        Integer urna interdum massa libero auctor neque turpis turpis semper.
-        Duis vel sed fames integer.
+        {text}
       </span>
       <button
         onClick={() => onDelete(id)}
