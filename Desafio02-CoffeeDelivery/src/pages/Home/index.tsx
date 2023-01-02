@@ -6,7 +6,8 @@ import {
   ShoppingCartSimple,
 } from "phosphor-react";
 import heroImage from "../../assets/hero.png";
-import productImage from "../../assets/products-images/Expresso Tradicional.png";
+import { NumberInput } from "../../components/NumberInput";
+import { ProductCard } from "./components/ProductCard";
 
 import {
   HeroContainer,
@@ -17,15 +18,6 @@ import {
   Item,
   ProductsListSection,
   ProductsList,
-  ProductCard,
-  ProductTag,
-  ProductName,
-  ProductDescription,
-  PriceContainer,
-  ProductCardFooter,
-  AmountInputContainer,
-  OrderButtonsContainer,
-  AddToCardButton,
 } from "./styles";
 
 export function Home() {
@@ -81,156 +73,12 @@ export function Home() {
         <h1>Nossos cafés</h1>
 
         <ProductsList>
-          <ProductCard>
-            <img src={productImage} alt="Imagem de um Expresso Tradicional" />
-
-            <ProductTag>TRADICIONAL</ProductTag>
-
-            <ProductName>Expresso Tradicional</ProductName>
-            <ProductDescription>
-              O tradicional café feito com água quente e grãos moídos
-            </ProductDescription>
-
-            <ProductCardFooter>
-              <PriceContainer>
-                R$ <span>9,90</span>
-              </PriceContainer>
-
-              <OrderButtonsContainer>
-                <AmountInputContainer>
-                  <input type="number" />
-                </AmountInputContainer>
-                <AddToCardButton>
-                  <ShoppingCartSimple weight="fill" />
-                </AddToCardButton>
-              </OrderButtonsContainer>
-            </ProductCardFooter>
-          </ProductCard>
-          <ProductCard>
-            <img src={productImage} alt="Imagem de um Expresso Tradicional" />
-
-            <ProductTag>TRADICIONAL</ProductTag>
-
-            <ProductName>Expresso Tradicional</ProductName>
-            <ProductDescription>
-              O tradicional café feito com água quente e grãos moídos
-            </ProductDescription>
-
-            <ProductCardFooter>
-              <PriceContainer>
-                R$ <span>9,90</span>
-              </PriceContainer>
-
-              <OrderButtonsContainer>
-                <AmountInputContainer>
-                  <input type="number" />
-                </AmountInputContainer>
-                <AddToCardButton>
-                  <ShoppingCartSimple weight="fill" />
-                </AddToCardButton>
-              </OrderButtonsContainer>
-            </ProductCardFooter>
-          </ProductCard>
-          <ProductCard>
-            <img src={productImage} alt="Imagem de um Expresso Tradicional" />
-
-            <ProductTag>TRADICIONAL</ProductTag>
-
-            <ProductName>Expresso Tradicional</ProductName>
-            <ProductDescription>
-              O tradicional café feito com água quente e grãos moídos
-            </ProductDescription>
-
-            <ProductCardFooter>
-              <PriceContainer>
-                R$ <span>9,90</span>
-              </PriceContainer>
-
-              <OrderButtonsContainer>
-                <AmountInputContainer>
-                  <input type="number" />
-                </AmountInputContainer>
-                <AddToCardButton>
-                  <ShoppingCartSimple weight="fill" />
-                </AddToCardButton>
-              </OrderButtonsContainer>
-            </ProductCardFooter>
-          </ProductCard>
-          <ProductCard>
-            <img src={productImage} alt="Imagem de um Expresso Tradicional" />
-
-            <ProductTag>TRADICIONAL</ProductTag>
-
-            <ProductName>Expresso Tradicional</ProductName>
-            <ProductDescription>
-              O tradicional café feito com água quente e grãos moídos
-            </ProductDescription>
-
-            <ProductCardFooter>
-              <PriceContainer>
-                R$ <span>9,90</span>
-              </PriceContainer>
-
-              <OrderButtonsContainer>
-                <AmountInputContainer>
-                  <input type="number" />
-                </AmountInputContainer>
-                <AddToCardButton>
-                  <ShoppingCartSimple weight="fill" />
-                </AddToCardButton>
-              </OrderButtonsContainer>
-            </ProductCardFooter>
-          </ProductCard>
-          <ProductCard>
-            <img src={productImage} alt="Imagem de um Expresso Tradicional" />
-
-            <ProductTag>TRADICIONAL</ProductTag>
-
-            <ProductName>Expresso Tradicional</ProductName>
-            <ProductDescription>
-              O tradicional café feito com água quente e grãos moídos
-            </ProductDescription>
-
-            <ProductCardFooter>
-              <PriceContainer>
-                R$ <span>9,90</span>
-              </PriceContainer>
-
-              <OrderButtonsContainer>
-                <AmountInputContainer>
-                  <input type="number" />
-                </AmountInputContainer>
-                <AddToCardButton>
-                  <ShoppingCartSimple weight="fill" />
-                </AddToCardButton>
-              </OrderButtonsContainer>
-            </ProductCardFooter>
-          </ProductCard>
-          <ProductCard>
-            <img src={productImage} alt="Imagem de um Expresso Tradicional" />
-
-            <ProductTag>TRADICIONAL</ProductTag>
-
-            <ProductName>Expresso Tradicional</ProductName>
-            <ProductDescription>
-              O tradicional café feito com água quente e grãos moídos
-            </ProductDescription>
-
-            <ProductCardFooter>
-              <PriceContainer>
-                R$ <span>9,90</span>
-              </PriceContainer>
-
-              <OrderButtonsContainer>
-                <AmountInputContainer>
-                  <input type="number" />
-                </AmountInputContainer>
-                <AddToCardButton>
-                  <ShoppingCartSimple weight="fill" />
-                </AddToCardButton>
-              </OrderButtonsContainer>
-            </ProductCardFooter>
-          </ProductCard>
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
         </ProductsList>
       </ProductsListSection>
     </main>
