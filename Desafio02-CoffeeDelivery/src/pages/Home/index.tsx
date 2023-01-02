@@ -1,12 +1,5 @@
-import {
-  ShoppingCart,
-  Package,
-  Timer,
-  Coffee,
-  ShoppingCartSimple,
-} from "phosphor-react";
+import { ShoppingCart, Package, Timer, Coffee } from "phosphor-react";
 import heroImage from "../../assets/hero.png";
-import { NumberInput } from "../../components/NumberInput";
 import { ProductCard } from "./components/ProductCard";
 
 import {

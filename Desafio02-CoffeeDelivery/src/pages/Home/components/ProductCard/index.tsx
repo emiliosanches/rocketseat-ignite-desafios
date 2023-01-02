@@ -21,7 +21,7 @@ export function ProductCard() {
   });
 
   function handleAddProductToCart(data: { itemAmount: number }) {
-    console.log(data)
+    console.log(data);
   }
 
   return (
@@ -40,7 +40,9 @@ export function ProductCard() {
           R$ <span>9,90</span>
         </PriceContainer>
 
-        <AddProductToCartForm onSubmit={addProductToCartForm.handleSubmit(handleAddProductToCart)}>
+        <AddProductToCartForm
+          onSubmit={addProductToCartForm.handleSubmit(handleAddProductToCart)}
+        >
           <FormProvider {...addProductToCartForm}>
             <NumberInput name="itemAmount" />
             <AddToCardButton type="submit">
