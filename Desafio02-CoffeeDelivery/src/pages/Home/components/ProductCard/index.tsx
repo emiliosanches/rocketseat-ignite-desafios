@@ -1,6 +1,5 @@
 import { useForm, FormProvider } from "react-hook-form";
 import { ShoppingCartSimple } from "phosphor-react";
-import productImage from "../../../../assets/products-images/Expresso Tradicional.png";
 import { NumberInput } from "../../../../components/NumberInput";
 import {
   ProductCardContainer,
@@ -11,9 +10,26 @@ import {
   ProductDescription,
   ProductName,
   ProductTag,
+  TagsContainer,
 } from "./styles";
 
-export function ProductCard() {
+interface ProductCardProps {
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+  price: number;
+  tags: string[];
+}
+
+export function ProductCard({
+  id,
+  name,
+  description,
+  image,
+  price,
+  tags,
+}: ProductCardProps) {
   const addProductToCartForm = useForm({
     defaultValues: {
       itemAmount: 1,
@@ -21,23 +37,28 @@ export function ProductCard() {
   });
 
   function handleAddProductToCart(data: { itemAmount: number }) {
-    console.log(data);
+    console.log({
+      id,
+      itemAmount: data.itemAmount,
+    });
   }
 
   return (
     <ProductCardContainer>
-      <img src={productImage} alt="Imagem de um Expresso Tradicional" />
+      <img src={image} alt="Imagem de um Expresso Tradicional" />
 
-      <ProductTag>TRADICIONAL</ProductTag>
+      <TagsContainer>
+        {tags.map((tag) => (
+          <ProductTag>{tag}</ProductTag>
+        ))}
+      </TagsContainer>
 
-      <ProductName>Expresso Tradicional</ProductName>
-      <ProductDescription>
-        O tradicional café feito com água quente e grãos moídos
-      </ProductDescription>
+      <ProductName>{name}</ProductName>
+      <ProductDescription>{description}</ProductDescription>
 
       <ProductCardFooter>
         <PriceContainer>
-          R$ <span>9,90</span>
+          R$ <span>{price.toFixed(2).replace(".", ",")}</span>
         </PriceContainer>
 
         <AddProductToCartForm

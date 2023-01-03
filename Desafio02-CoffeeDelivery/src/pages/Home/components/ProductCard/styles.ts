@@ -17,12 +17,17 @@ export const ProductCardContainer = styled.div`
   }
 `;
 
+export const TagsContainer = styled.div`
+  display: flex;
+  gap: 0.25rem;
+  margin: 0.75rem 0 1rem;
+`;
+
 export const ProductTag = styled.span`
   background: ${(props) => props.theme["yellow-light"]};
   color: ${(props) => props.theme["yellow-dark"]};
   padding: 0.25rem 0.5rem;
   border-radius: 999px;
-  margin: 1rem;
 
   font-size: 0.625rem;
   font-weight: 700;

@@ -1,5 +1,6 @@
 import { ShoppingCart, Package, Timer, Coffee } from "phosphor-react";
 import heroImage from "../../assets/hero.png";
+import { products } from "../../data/products-listing";
 import { ProductCard } from "./components/ProductCard";
 
 import {
@@ -66,12 +67,17 @@ export function Home() {
         <h1>Nossos cafés</h1>
 
         <ProductsList>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              id={product.id}
+              name={product.name}
+              description={product.description}
+              image={product.image}
+              tags={product.tags}
+              price={product.price}
+            />
+          ))}
         </ProductsList>
       </ProductsListSection>
     </main>
