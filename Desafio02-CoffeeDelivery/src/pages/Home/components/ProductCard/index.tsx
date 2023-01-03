@@ -12,6 +12,8 @@ import {
   ProductTag,
   TagsContainer,
 } from "./styles";
+import { useContext } from "react";
+import { CartContext } from "../../../../contexts/CartContext";
 
 interface ProductCardProps {
   id: number;
@@ -36,10 +38,12 @@ export function ProductCard({
     },
   });
 
+  const { addItemToCart } = useContext(CartContext);
+
   function handleAddProductToCart(data: { itemAmount: number }) {
-    console.log({
+    addItemToCart({
       id,
-      itemAmount: data.itemAmount,
+      amount: data.itemAmount,
     });
   }
 
