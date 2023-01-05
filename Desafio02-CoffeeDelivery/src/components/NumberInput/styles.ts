@@ -6,6 +6,7 @@ export const AmountInputContainer = styled.div`
   border-radius: 6px;
   align-items: center;
   padding: 0.25rem;
+  width: fit-content;
 
   input {
     width: 1.25rem;

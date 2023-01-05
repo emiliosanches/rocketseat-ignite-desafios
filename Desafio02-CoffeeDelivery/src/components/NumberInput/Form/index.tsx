@@ -1,6 +1,6 @@
 import { Minus, Plus } from "phosphor-react";
 import { useFormContext } from "react-hook-form";
-import { AmountInputContainer } from "./styles";
+import { AmountInputContainer } from "../styles";
 
 interface NumberInputProps {
   name: string;

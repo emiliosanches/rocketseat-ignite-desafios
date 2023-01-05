@@ -1,6 +1,6 @@
 import { useForm, FormProvider } from "react-hook-form";
 import { ShoppingCartSimple } from "phosphor-react";
-import { NumberInput } from "../../../../components/NumberInput";
+import { NumberInput } from "../../../../components/NumberInput/Form";
 import {
   ProductCardContainer,
   AddToCardButton,
