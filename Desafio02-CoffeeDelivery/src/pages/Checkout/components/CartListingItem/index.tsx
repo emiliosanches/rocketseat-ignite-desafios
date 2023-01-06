@@ -1,6 +1,8 @@
 import { Trash } from "phosphor-react";
+import { useContext, useMemo } from "react";
 import { NumberInput } from "../../../../components/NumberInput/Controlled";
-import espressoImage from "../../../../assets/products-images/Expresso Tradicional.png";
+import { CartContext } from "../../../../contexts/CartContext";
+import { products } from "../../../../data/products-listing";
 
 import {
   CartControlsContainer,
@@ -9,17 +11,37 @@ import {
   Separator,
 } from "./styles";
 
-export function CartListingItem() {
+interface CartListingItemProps {
+  id: number;
+  amount: number;
+}
+
+export function CartListingItem({ id, amount }: CartListingItemProps) {
+  const { removeItemFromCart, updateItemAmountInCart } =
+    useContext(CartContext);
+
+  const product = useMemo(() => {
+    return products.find((product) => product.id === id)!;
+  }, []);
+
+  function handleUpdateItemAmount(newAmount: number) {
+    updateItemAmountInCart(id, newAmount);
+  }
+
+  function handleRemoveItemFromCart() {
+    removeItemFromCart(id);
+  }
+
   return (
     <>
       <CartItemCard>
-        <img src={espressoImage} />
+        <img src={product.image} />
 
         <div>
-          <span>Expresso tradicional</span>
+          <span>{product.name}</span>
           <CartControlsContainer>
-            <NumberInput onChange={() => {}} value={1} />
-            <RemoveItemFromCartButton>
+            <NumberInput onChange={handleUpdateItemAmount} value={amount} />
+            <RemoveItemFromCartButton onClick={handleRemoveItemFromCart}>
               <Trash />
               <span>REMOVER</span>
             </RemoveItemFromCartButton>

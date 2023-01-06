@@ -1,4 +1,5 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { products } from "../data/products-listing";
 
 interface CartItem {
   id: number;
@@ -22,6 +23,20 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   function addItemToCart(item: CartItem) {
+    if (!products.find((product) => product.id === item.id)) return;
+
+    if (cartItems.some((cartItem) => cartItem.id === item.id))
+      return setCartItems((prev) =>
+        prev.map((cartItem) => {
+          if (cartItem.id === item.id)
+            return {
+              ...cartItem,
+              amount: cartItem.amount + item.amount,
+            };
+          return cartItem;
+        })
+      );
+
     setCartItems((prev) => [...prev, item]);
   }
 
@@ -40,6 +55,12 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
       })
     );
   }
+
+  useEffect(() => {
+    if (cartItems.some((cartItem) => cartItem.amount === 0)) {
+      setCartItems(cartItems.filter((cartItem) => cartItem.amount));
+    }
+  }, [cartItems]);
 
   return (
     <CartContext.Provider
