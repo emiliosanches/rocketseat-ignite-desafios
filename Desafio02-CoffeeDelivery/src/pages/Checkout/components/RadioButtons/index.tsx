@@ -1,4 +1,3 @@
-import { Bank, CreditCard, Money } from "phosphor-react";
 import { useFormContext } from "react-hook-form";
 import { PaymentMethodButton, PaymentMethodSelectContainer } from "./styled";
 
@@ -19,7 +18,7 @@ export function RadioButtons({ name, options }: RadioButtonsProps) {
   return (
     <PaymentMethodSelectContainer>
       {options.map(({ value, labelIcon, labelText }) => (
-        <PaymentMethodButton>
+        <PaymentMethodButton key={value}>
           <input
             type="radio"
             value={value}

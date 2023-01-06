@@ -11,6 +11,7 @@ interface CartContext {
   addItemToCart: (item: CartItem) => void;
   removeItemFromCart: (id: number) => void;
   updateItemAmountInCart: (id: number, amount: number) => void;
+  clearCart: () => void;
 }
 
 export const CartContext = createContext<CartContext>({} as any);
@@ -56,6 +57,10 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     );
   }
 
+  function clearCart() {
+    setCartItems([]);
+  }
+
   useEffect(() => {
     if (cartItems.some((cartItem) => cartItem.amount === 0)) {
       setCartItems(cartItems.filter((cartItem) => cartItem.amount));
@@ -69,6 +74,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         addItemToCart,
         removeItemFromCart,
         updateItemAmountInCart,
+        clearCart,
       }}
     >
       {children}

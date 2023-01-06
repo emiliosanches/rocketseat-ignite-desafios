@@ -15,16 +15,27 @@ import {
   TextInputContainer,
 } from "./styles";
 
+interface IDeliveryFormData {
+  zipcode: string;
+  street: string;
+  number: string;
+  complement?: string;
+  neighborhood: string;
+  city: string;
+  state: string;
+  payment_options: string;
+}
+
 interface DeliveryFormProps {
   id: string;
-  onSubmit: (value: any) => void;
+  onSubmit: (e?: React.BaseSyntheticEvent) => Promise<void>;
 }
 
 export function DeliveryForm({ id, onSubmit }: DeliveryFormProps) {
   const { handleSubmit, register } = useFormContext();
 
   return (
-    <DeliveryFormContainer onSubmit={handleSubmit(onSubmit)} id={id}>
+    <DeliveryFormContainer onSubmit={onSubmit} id={id}>
       <DeliveryFormFieldset>
         <FieldsetLegend iconColor="yellow-dark">
           <MapPinLine />
@@ -54,7 +65,7 @@ export function DeliveryForm({ id, onSubmit }: DeliveryFormProps) {
             <input placeholder="Cidade" {...register("city")} />
           </TextInputContainer>
           <TextInputContainer id="state">
-            <input placeholder="UF" {...register("uf")} />
+            <input placeholder="UF" {...register("state")} />
           </TextInputContainer>
         </AddressInputsGrid>
       </DeliveryFormFieldset>
@@ -71,7 +82,7 @@ export function DeliveryForm({ id, onSubmit }: DeliveryFormProps) {
         </FieldsetLegend>
 
         <RadioButtons
-          name="payment_options"
+          name="payment_method"
           options={[
             {
               value: "credit_card",

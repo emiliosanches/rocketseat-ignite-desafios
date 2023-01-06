@@ -28,6 +28,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@hookform/resolvers", "virtual:1e673783949d0c8da840e955a1e9fe48de8bef3ecc2c7a7f35f92e404d31bc34681190d25c6c8bafae9c103b7d3872d3defb7851d615c46dcb10784a9d5c9fcf#npm:2.9.10"],\
             ["@types/react", "npm:18.0.26"],\
             ["@types/react-dom", "npm:18.0.10"],\
             ["@types/styled-components", "npm:5.1.26"],\
@@ -38,9 +39,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-hook-form", "virtual:1e673783949d0c8da840e955a1e9fe48de8bef3ecc2c7a7f35f92e404d31bc34681190d25c6c8bafae9c103b7d3872d3defb7851d615c46dcb10784a9d5c9fcf#npm:7.41.3"],\
             ["react-is", "npm:18.2.0"],\
             ["react-router-dom", "virtual:1e673783949d0c8da840e955a1e9fe48de8bef3ecc2c7a7f35f92e404d31bc34681190d25c6c8bafae9c103b7d3872d3defb7851d615c46dcb10784a9d5c9fcf#npm:6.6.1"],\
+            ["react-toastify", "virtual:1e673783949d0c8da840e955a1e9fe48de8bef3ecc2c7a7f35f92e404d31bc34681190d25c6c8bafae9c103b7d3872d3defb7851d615c46dcb10784a9d5c9fcf#npm:9.1.1"],\
             ["styled-components", "virtual:1e673783949d0c8da840e955a1e9fe48de8bef3ecc2c7a7f35f92e404d31bc34681190d25c6c8bafae9c103b7d3872d3defb7851d615c46dcb10784a9d5c9fcf#npm:5.3.6"],\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"],\
-            ["vite", "virtual:1e673783949d0c8da840e955a1e9fe48de8bef3ecc2c7a7f35f92e404d31bc34681190d25c6c8bafae9c103b7d3872d3defb7851d615c46dcb10784a9d5c9fcf#npm:4.0.3"]\
+            ["vite", "virtual:1e673783949d0c8da840e955a1e9fe48de8bef3ecc2c7a7f35f92e404d31bc34681190d25c6c8bafae9c103b7d3872d3defb7851d615c46dcb10784a9d5c9fcf#npm:4.0.3"],\
+            ["zod", "npm:3.20.2"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -450,6 +453,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@gar-promisify-npm-1.1.3-ac1a325862-4059f790e2.zip/node_modules/@gar/promisify/",\
           "packageDependencies": [\
             ["@gar/promisify", "npm:1.1.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@hookform/resolvers", [\
+        ["npm:2.9.10", {\
+          "packageLocation": "./.yarn/cache/@hookform-resolvers-npm-2.9.10-940efb71c1-ae3395372d.zip/node_modules/@hookform/resolvers/",\
+          "packageDependencies": [\
+            ["@hookform/resolvers", "npm:2.9.10"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:1e673783949d0c8da840e955a1e9fe48de8bef3ecc2c7a7f35f92e404d31bc34681190d25c6c8bafae9c103b7d3872d3defb7851d615c46dcb10784a9d5c9fcf#npm:2.9.10", {\
+          "packageLocation": "./.yarn/__virtual__/@hookform-resolvers-virtual-1c16c7387b/0/cache/@hookform-resolvers-npm-2.9.10-940efb71c1-ae3395372d.zip/node_modules/@hookform/resolvers/",\
+          "packageDependencies": [\
+            ["@hookform/resolvers", "virtual:1e673783949d0c8da840e955a1e9fe48de8bef3ecc2c7a7f35f92e404d31bc34681190d25c6c8bafae9c103b7d3872d3defb7851d615c46dcb10784a9d5c9fcf#npm:2.9.10"],\
+            ["@types/react-hook-form", null],\
+            ["react-hook-form", "virtual:1e673783949d0c8da840e955a1e9fe48de8bef3ecc2c7a7f35f92e404d31bc34681190d25c6c8bafae9c103b7d3872d3defb7851d615c46dcb10784a9d5c9fcf#npm:7.41.3"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-hook-form",\
+            "react-hook-form"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -950,6 +975,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["clsx", [\
+        ["npm:1.2.1", {\
+          "packageLocation": "./.yarn/cache/clsx-npm-1.2.1-77792dc182-30befca801.zip/node_modules/clsx/",\
+          "packageDependencies": [\
+            ["clsx", "npm:1.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["color-convert", [\
         ["npm:1.9.3", {\
           "packageLocation": "./.yarn/cache/color-convert-npm-1.9.3-1fe690075e-fd7a64a17c.zip/node_modules/color-convert/",\
@@ -1072,6 +1106,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["desafio02-coffeedelivery", "workspace:."],\
+            ["@hookform/resolvers", "virtual:1e673783949d0c8da840e955a1e9fe48de8bef3ecc2c7a7f35f92e404d31bc34681190d25c6c8bafae9c103b7d3872d3defb7851d615c46dcb10784a9d5c9fcf#npm:2.9.10"],\
             ["@types/react", "npm:18.0.26"],\
             ["@types/react-dom", "npm:18.0.10"],\
             ["@types/styled-components", "npm:5.1.26"],\
@@ -1082,9 +1117,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-hook-form", "virtual:1e673783949d0c8da840e955a1e9fe48de8bef3ecc2c7a7f35f92e404d31bc34681190d25c6c8bafae9c103b7d3872d3defb7851d615c46dcb10784a9d5c9fcf#npm:7.41.3"],\
             ["react-is", "npm:18.2.0"],\
             ["react-router-dom", "virtual:1e673783949d0c8da840e955a1e9fe48de8bef3ecc2c7a7f35f92e404d31bc34681190d25c6c8bafae9c103b7d3872d3defb7851d615c46dcb10784a9d5c9fcf#npm:6.6.1"],\
+            ["react-toastify", "virtual:1e673783949d0c8da840e955a1e9fe48de8bef3ecc2c7a7f35f92e404d31bc34681190d25c6c8bafae9c103b7d3872d3defb7851d615c46dcb10784a9d5c9fcf#npm:9.1.1"],\
             ["styled-components", "virtual:1e673783949d0c8da840e955a1e9fe48de8bef3ecc2c7a7f35f92e404d31bc34681190d25c6c8bafae9c103b7d3872d3defb7851d615c46dcb10784a9d5c9fcf#npm:5.3.6"],\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"],\
-            ["vite", "virtual:1e673783949d0c8da840e955a1e9fe48de8bef3ecc2c7a7f35f92e404d31bc34681190d25c6c8bafae9c103b7d3872d3defb7851d615c46dcb10784a9d5c9fcf#npm:4.0.3"]\
+            ["vite", "virtual:1e673783949d0c8da840e955a1e9fe48de8bef3ecc2c7a7f35f92e404d31bc34681190d25c6c8bafae9c103b7d3872d3defb7851d615c46dcb10784a9d5c9fcf#npm:4.0.3"],\
+            ["zod", "npm:3.20.2"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -1968,6 +2005,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["react-toastify", [\
+        ["npm:9.1.1", {\
+          "packageLocation": "./.yarn/cache/react-toastify-npm-9.1.1-114b39ed7d-2039255539.zip/node_modules/react-toastify/",\
+          "packageDependencies": [\
+            ["react-toastify", "npm:9.1.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:1e673783949d0c8da840e955a1e9fe48de8bef3ecc2c7a7f35f92e404d31bc34681190d25c6c8bafae9c103b7d3872d3defb7851d615c46dcb10784a9d5c9fcf#npm:9.1.1", {\
+          "packageLocation": "./.yarn/__virtual__/react-toastify-virtual-0b88d28470/0/cache/react-toastify-npm-9.1.1-114b39ed7d-2039255539.zip/node_modules/react-toastify/",\
+          "packageDependencies": [\
+            ["react-toastify", "virtual:1e673783949d0c8da840e955a1e9fe48de8bef3ecc2c7a7f35f92e404d31bc34681190d25c6c8bafae9c103b7d3872d3defb7851d615c46dcb10784a9d5c9fcf#npm:9.1.1"],\
+            ["@types/react", "npm:18.0.26"],\
+            ["@types/react-dom", "npm:18.0.10"],\
+            ["clsx", "npm:1.2.1"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:1e673783949d0c8da840e955a1e9fe48de8bef3ecc2c7a7f35f92e404d31bc34681190d25c6c8bafae9c103b7d3872d3defb7851d615c46dcb10784a9d5c9fcf#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["readable-stream", [\
         ["npm:3.6.0", {\
           "packageLocation": "./.yarn/cache/readable-stream-npm-3.6.0-23a4a5eb56-d4ea81502d.zip/node_modules/readable-stream/",\
@@ -2369,6 +2433,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/yallist-npm-4.0.0-b493d9e907-343617202a.zip/node_modules/yallist/",\
           "packageDependencies": [\
             ["yallist", "npm:4.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["zod", [\
+        ["npm:3.20.2", {\
+          "packageLocation": "./.yarn/cache/zod-npm-3.20.2-faa0b46f24-04172f7e93.zip/node_modules/zod/",\
+          "packageDependencies": [\
+            ["zod", "npm:3.20.2"]\
           ],\
           "linkType": "HARD"\
         }]\
