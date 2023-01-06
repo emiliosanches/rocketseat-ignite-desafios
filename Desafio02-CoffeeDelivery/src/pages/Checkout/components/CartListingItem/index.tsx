@@ -48,7 +48,7 @@ export function CartListingItem({ id, amount }: CartListingItemProps) {
           </CartControlsContainer>
         </div>
 
-        <span>R$ 9,90</span>
+        <span>R$ {product.price.toFixed(2).replace(".", ",")}</span>
       </CartItemCard>
 
       <Separator />
