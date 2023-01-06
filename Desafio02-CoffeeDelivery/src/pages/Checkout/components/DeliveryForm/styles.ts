@@ -92,33 +92,3 @@ export const AddressInputsGrid = styled.div`
     grid-area: state;
   }
 `;
-
-export const TextInputContainer = styled.div`
-  input {
-    border: 1px solid ${(props) => props.theme["base-button"]};
-    background: ${(props) => props.theme["base-input"]};
-    padding: 0.75rem;
-    position: relative;
-    border-radius: 4px;
-    width: 100%;
-    font-size: 0.875rem;
-    color: ${(props) => props.theme["base-text"]};
-
-    &:focus {
-      outline: 1px solid ${(props) => props.theme["yellow-dark"]};
-    }
-
-    &::after {
-      content: "Opcional";
-      display: block;
-      position: absolute;
-      right: 0.75rem;
-      top: 0.75rem;
-    }
-
-    &::placeholder {
-      font-size: 0.875rem;
-      color: ${(props) => props.theme["base-label"]};
-    }
-  }
-`;

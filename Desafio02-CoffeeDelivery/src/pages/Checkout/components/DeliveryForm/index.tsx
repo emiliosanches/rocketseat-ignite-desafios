@@ -6,13 +6,13 @@ import {
   Money,
 } from "phosphor-react";
 import { useFormContext } from "react-hook-form";
+import { TextInput } from "../../../../components/TextInput";
 import { RadioButtons } from "../RadioButtons";
 import {
   AddressInputsGrid,
   DeliveryFormContainer,
   DeliveryFormFieldset,
   FieldsetLegend,
-  TextInputContainer,
 } from "./styles";
 
 interface IDeliveryFormData {
@@ -46,27 +46,22 @@ export function DeliveryForm({ id, onSubmit }: DeliveryFormProps) {
         </FieldsetLegend>
 
         <AddressInputsGrid>
-          <TextInputContainer id="zipcode">
-            <input placeholder="CEP" {...register("zipcode")} />
-          </TextInputContainer>
-          <TextInputContainer id="street">
-            <input placeholder="Rua" {...register("street")} />
-          </TextInputContainer>
-          <TextInputContainer id="number">
-            <input placeholder="Número" {...register("number")} />
-          </TextInputContainer>
-          <TextInputContainer id="complement">
-            <input placeholder="Complemento" {...register("complement")} />
-          </TextInputContainer>
-          <TextInputContainer id="neighborhood">
-            <input placeholder="Bairro" {...register("neighborhood")} />
-          </TextInputContainer>
-          <TextInputContainer id="city">
-            <input placeholder="Cidade" {...register("city")} />
-          </TextInputContainer>
-          <TextInputContainer id="state">
-            <input placeholder="UF" {...register("state")} />
-          </TextInputContainer>
+          <TextInput placeholder="CEP" name="zipcode" gridArea="zipcode" />
+          <TextInput placeholder="Rua" name="street" gridArea="street" />
+          <TextInput placeholder="Número" name="number" gridArea="number" />
+          <TextInput
+            placeholder="Complemento"
+            name="complement"
+            gridArea="complement"
+            optional
+          />
+          <TextInput
+            placeholder="Bairro"
+            gridArea="neighborhood"
+            name="neighborhood"
+          />
+          <TextInput placeholder="Cidade" gridArea="city" name="city" />
+          <TextInput placeholder="UF" gridArea="state" name="state" />
         </AddressInputsGrid>
       </DeliveryFormFieldset>
 
