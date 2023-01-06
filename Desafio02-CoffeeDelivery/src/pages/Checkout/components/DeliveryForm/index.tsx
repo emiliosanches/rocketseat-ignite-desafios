@@ -5,7 +5,6 @@ import {
   MapPinLine,
   Money,
 } from "phosphor-react";
-import { useFormContext } from "react-hook-form";
 import { TextInput } from "../../../../components/TextInput";
 import { RadioButtons } from "../RadioButtons";
 import {
@@ -15,25 +14,12 @@ import {
   FieldsetLegend,
 } from "./styles";
 
-interface IDeliveryFormData {
-  zipcode: string;
-  street: string;
-  number: string;
-  complement?: string;
-  neighborhood: string;
-  city: string;
-  state: string;
-  payment_options: string;
-}
-
 interface DeliveryFormProps {
   id: string;
   onSubmit: (e?: React.BaseSyntheticEvent) => Promise<void>;
 }
 
 export function DeliveryForm({ id, onSubmit }: DeliveryFormProps) {
-  const { handleSubmit, register } = useFormContext();
-
   return (
     <DeliveryFormContainer onSubmit={onSubmit} id={id}>
       <DeliveryFormFieldset>
