@@ -1,10 +1,11 @@
-import { createContext, useEffect, useState } from "react";
-import { products } from "../data/products-listing";
-
-interface CartItem {
-  id: number;
-  amount: number;
-}
+import { createContext, useEffect, useReducer } from "react";
+import {
+  addItemToCartAction,
+  clearCartAction,
+  removeItemFromCartAction,
+  updateItemAmountInCartAction,
+} from "../reducer/cart/actions";
+import { CartItem, cartReducer } from "../reducer/cart/reducer";
 
 interface CartContext {
   items: CartItem[];
@@ -21,56 +22,38 @@ interface CartContextProviderProps {
 }
 
 export function CartContextProvider({ children }: CartContextProviderProps) {
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [cartState, dispatch] = useReducer(cartReducer, { items: [] });
 
   function addItemToCart(item: CartItem) {
-    if (!products.find((product) => product.id === item.id)) return;
-
-    if (cartItems.some((cartItem) => cartItem.id === item.id))
-      return setCartItems((prev) =>
-        prev.map((cartItem) => {
-          if (cartItem.id === item.id)
-            return {
-              ...cartItem,
-              amount: cartItem.amount + item.amount,
-            };
-          return cartItem;
-        })
-      );
-
-    setCartItems((prev) => [...prev, item]);
+    dispatch(addItemToCartAction(item));
   }
 
   function removeItemFromCart(id: number) {
-    setCartItems((prev) => prev.filter((item) => item.id !== id));
+    dispatch(removeItemFromCartAction(id));
   }
 
   function updateItemAmountInCart(id: number, amount: number) {
-    setCartItems((prev) =>
-      prev.map((item) => {
-        if (item.id === id) {
-          return { ...item, amount };
-        }
-
-        return item;
-      })
-    );
+    dispatch(updateItemAmountInCartAction(id, amount));
   }
 
   function clearCart() {
-    setCartItems([]);
+    dispatch(clearCartAction());
   }
 
   useEffect(() => {
-    if (cartItems.some((cartItem) => cartItem.amount === 0)) {
-      setCartItems(cartItems.filter((cartItem) => cartItem.amount));
+    const itemWithAmountZero = cartState.items.find(
+      (cartItem) => cartItem.amount === 0
+    );
+
+    if (itemWithAmountZero) {
+      dispatch(removeItemFromCartAction(itemWithAmountZero.id));
     }
-  }, [cartItems]);
+  }, [cartState.items]);
 
   return (
     <CartContext.Provider
       value={{
-        items: cartItems,
+        items: cartState.items,
         addItemToCart,
         removeItemFromCart,
         updateItemAmountInCart,
