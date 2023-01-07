@@ -1,5 +1,6 @@
-import { products } from "../../data/products-listing";
+import { produce } from "immer";
 import { ActionType } from "./actions";
+import { products } from "../../data/products-listing";
 
 export interface CartItem {
   id: number;
@@ -23,46 +24,39 @@ export function cartReducer(state: CartState, action: Action) {
 
       if (
         state.items.some((cartItem) => cartItem.id === action.payload.item.id)
-      )
-        return {
-          ...state,
-          items: state.items.map((cartItem) => {
-            if (cartItem.id === action.payload.item.id)
-              return {
-                ...cartItem,
-                amount: cartItem.amount + action.payload.item.amount,
-              };
-            return cartItem;
-          }),
-        };
+      ) {
+        return produce(state, (draft) => {
+          const itemInCartIndex = draft.items.findIndex(
+            (i) => i.id === action.payload.item.id
+          );
 
-      return {
-        ...state,
-        items: [...state.items, action.payload.item],
-      };
+          draft.items[itemInCartIndex].amount += action.payload.item.amount;
+        });
+      }
+
+      return produce(state, (draft) => {
+        draft.items.push(action.payload.item);
+      });
 
     case ActionType.REMOVE_ITEM_FROM_CART:
-      return {
-        ...state,
-        items: state.items.filter((item) => item.id !== action.payload.id),
-      };
+      return produce(state, (draft) => {
+        draft.items = draft.items.filter(
+          (item) => item.id !== action.payload.id
+        );
+      });
 
     case ActionType.UPDATE_ITEM_AMOUNT_IN_CART:
-      return {
-        ...state,
-        items: state.items.map((item) => {
-          if (item.id === action.payload.id) {
-            return { ...item, amount: action.payload.amount };
-          }
-
-          return item;
-        }),
-      };
+      return produce(state, (draft) => {
+        const itemInCartIndex = draft.items.findIndex(
+          (item) => item.id === action.payload.id
+        );
+        draft.items[itemInCartIndex].amount = action.payload.amount;
+      });
 
     case ActionType.CLEAR_CART:
-      return {
-        items: [],
-      };
+      return produce(state, (draft) => {
+        draft.items = [];
+      });
 
     default:
       return state;
