@@ -887,6 +887,7 @@ __metadata:
     "@types/react-dom": ^18.0.9
     "@types/styled-components": ^5.1.26
     "@vitejs/plugin-react-swc": ^3.0.0
+    immer: ^9.0.17
     phosphor-react: ^1.4.1
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -1189,6 +1190,13 @@ __metadata:
   dependencies:
     safer-buffer: ">= 2.1.2 < 3.0.0"
   checksum: 3f60d47a5c8fc3313317edfd29a00a692cc87a19cac0159e2ce711d0ebc9019064108323b5e493625e25594f11c6236647d8e256fbe7a58f4a3b33b89e6d30bf
+  languageName: node
+  linkType: hard
+
+"immer@npm:^9.0.17":
+  version: 9.0.17
+  resolution: "immer@npm:9.0.17"
+  checksum: 046d562b74f050632d2861042dbcad49a5e86ffe5bb9b8bff6e699b1c7d8478019d9a3be61e72117cecc29826d2caa4fa927a7e10262381144dd33c735b9531c
   languageName: node
   linkType: hard
 
